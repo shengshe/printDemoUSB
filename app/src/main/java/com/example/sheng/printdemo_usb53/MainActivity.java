@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "连接失败", Toast.LENGTH_SHORT).show();
 
         }
-
         @Override
         public void onConnectClose() {
             Toast.makeText(MainActivity.this, "连接关闭", Toast.LENGTH_SHORT).show();

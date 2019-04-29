@@ -9,11 +9,13 @@ import com.sinochem.printlib.Interface.IPrintConnectedState;
 import com.sinochem.printlib.Interface.PrintDeviceErrorCallBack;
 import com.sinochem.printlib.daping.hangxin_sp.PrintUtils_HX;
 import com.sinochem.printlib.daping.hangxin_sp.USBPrintDevices_HX;
+import com.tencent.bugly.Bugly;
 
 import java.text.SimpleDateFormat;
 
 public class MainActivity extends AppCompatActivity {
     private PrintUtils_HX printUtils_hx;
+
 
     //航行打印机
     USBPrintDevices_HX printDevicesHx = new USBPrintDevices_HX(this, new PrintDeviceErrorCallBack() {
@@ -80,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Bugly.init(getApplicationContext(), "380e2cadc0", true);
+
     }
 
     //连接打印机

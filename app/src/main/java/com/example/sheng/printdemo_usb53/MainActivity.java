@@ -10,6 +10,7 @@ import com.sinochem.printlib.Interface.PrintDeviceErrorCallBack;
 import com.sinochem.printlib.daping.hangxin_sp.PrintUtils_HX;
 import com.sinochem.printlib.daping.hangxin_sp.USBPrintDevices_HX;
 import com.tencent.bugly.Bugly;
+import com.tencent.bugly.beta.Beta;
 
 import java.text.SimpleDateFormat;
 
@@ -83,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Bugly.init(getApplicationContext(), "380e2cadc0", true);
+        Beta.checkUpgrade(false,false);
+
 
     }
 

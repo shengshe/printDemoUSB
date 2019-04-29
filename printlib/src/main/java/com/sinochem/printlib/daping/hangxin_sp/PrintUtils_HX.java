@@ -1,9 +1,13 @@
 package com.sinochem.printlib.daping.hangxin_sp;
 
+import android.util.Log;
+
 import com.printer.sdk.PrinterConstants;
 import com.printer.sdk.PrinterInstance;
 import com.sinochem.printlib.Interface.IPrint;
 import com.sinochem.printlib.Interface.IPrintFunction;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by ShengS on 2018/8/16.
@@ -15,8 +19,14 @@ public class PrintUtils_HX implements IPrintFunction {
     private final PrinterInstance mPrinter;//打印机实力对象
 
     public PrintUtils_HX(IPrint print) {//IPrint这里传具体实现类
+
         mPrinter = (PrinterInstance) print.getDevices();
-        mPrinter.initPrinter();//初始化打印机
+        if (mPrinter != null) {
+
+            mPrinter.initPrinter();//初始化打印机
+        } else {
+            Log.e(TAG, "PrintUtils_HX: mrinter is null");
+        }
     }
 
     @Override

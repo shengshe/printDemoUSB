@@ -2,7 +2,6 @@ package com.sinochem.printlib.daping.hangxin_sp;
 
 import android.annotation.SuppressLint;
 import android.app.PendingIntent;
-import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -12,13 +11,10 @@ import android.hardware.usb.UsbManager;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.example.sheng.printlib.R;
 import com.printer.sdk.PrinterConstants;
 import com.printer.sdk.PrinterInstance;
 import com.printer.sdk.usb.USBPort;
-import com.printer.sdk.utils.XLog;
 import com.sinochem.printlib.Interface.IPrint;
 import com.sinochem.printlib.Interface.IPrintConnectedState;
 import com.sinochem.printlib.Interface.PrintDeviceErrorCallBack;
@@ -148,6 +144,10 @@ public class USBPrintDevices_HX implements IPrint {
         HashMap<String, UsbDevice> devices = manager.getDeviceList();
         deviceList = new ArrayList();
         for (UsbDevice device : devices.values()) {
+            SDCardUtils.saveMessageToSD_YJ("搜索打印机设备，名称：" + device.getDeviceName()
+                    + "\n ProductId:" + device.getProductId()
+                    + "\n VendorId:" + device.getVendorId()
+            );
             if (USBPort.isUsbPrinter(device)) {
                 SDCardUtils.saveMessageToSD_YJ("搜索到打印机设备，名称：" + device.getDeviceName()
                         + "\n ProductId:" + device.getProductId()

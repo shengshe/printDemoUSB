@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sheng.printdemo_usb53.MainActivity">
+
+
+    <Button
+        android:id="@+id/bt_connect"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="connect"
+        android:text="连接"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/bt_connectState"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="connectState"
+        android:text="连接状态"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/bt_disConnect"
+        app:layout_constraintTop_toBottomOf="@id/bt_connect" />
+
+    <Button
+        android:id="@+id/bt_disConnect"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="disConnect"
+        android:text="断开连接"
+        app:layout_constraintBottom_toBottomOf="@id/bt_connectState"
+        app:layout_constraintLeft_toRightOf="@id/bt_connectState"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/bt_print"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="print"
+        android:text="打印"
+        app:layout_constraintTop_toBottomOf="@id/bt_connectState" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ssss"
+        app:layout_constraintTop_toBottomOf="@id/bt_print" />
+</android.support.constraint.ConstraintLayout>

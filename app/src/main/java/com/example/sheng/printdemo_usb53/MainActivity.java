@@ -14,6 +14,9 @@ import com.tencent.bugly.beta.Beta;
 
 import java.text.SimpleDateFormat;
 
+/**
+ * 测试界面
+ */
 public class MainActivity extends AppCompatActivity {
     private PrintUtils_HX printUtils_hx;
 

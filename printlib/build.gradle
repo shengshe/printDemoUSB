@@ -14,9 +14,21 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
-
+    //签名文件配置自定义 by ym start
+    signingConfigs {
+        config {
+            storeFile file("dayintest")
+            storePassword "dayintest"
+            keyAlias "dayintest"
+            keyPassword "dayintest"
+        }
+    }
     buildTypes {
+        debug{
+            signingConfig signingConfigs.config
+        }
         release {
+            signingConfig signingConfigs.config
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

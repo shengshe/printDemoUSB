@@ -61,7 +61,11 @@ public class PrintUtils_HX implements IPrintFunction {
 
     @Override
     public void setPrintFontSize() {
-        mPrinter.setFont(0, 1, 1, 0, 0);
+        if (mPrinter != null) {
+            mPrinter.setFont(0, 1, 1, 0, 0);
+        } else {
+            Log.e(TAG, "setPrintFontSize PrintUtils_HX: mrinter is null");
+        }
     }
 
     @Override
@@ -71,17 +75,29 @@ public class PrintUtils_HX implements IPrintFunction {
 
     @Override
     public void setFontMiddle() {
-        mPrinter.setPrinter(PrinterConstants.Command.ALIGN, PrinterConstants.Command.ALIGN_CENTER);
+        if (mPrinter != null) {
+            mPrinter.setPrinter(PrinterConstants.Command.ALIGN, PrinterConstants.Command.ALIGN_CENTER);
+        } else {
+            Log.e(TAG, "PrintUtils_HX: mrinter is null");
+        }
 
     }
 
     @Override
     public void setFontLeft() {
-        mPrinter.setPrinter(PrinterConstants.Command.ALIGN, PrinterConstants.Command.ALIGN_LEFT);
+        if (mPrinter != null) {
+            mPrinter.setPrinter(PrinterConstants.Command.ALIGN, PrinterConstants.Command.ALIGN_LEFT);
+        } else {
+            Log.e(TAG, "PrintUtils_HX: mrinter is null");
+        }
     }
 
     @Override
     public void setFontRight() {
-        mPrinter.setPrinter(PrinterConstants.Command.ALIGN, PrinterConstants.Command.ALIGN_RIGHT);
+        if (mPrinter != null) {
+            mPrinter.setPrinter(PrinterConstants.Command.ALIGN, PrinterConstants.Command.ALIGN_RIGHT);
+        } else {
+            Log.e(TAG, "PrintUtils_HX: mrinter is null");
+        }
     }
 }
